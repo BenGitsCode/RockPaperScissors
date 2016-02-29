@@ -31,6 +31,7 @@ function getPlayerMove(move) {
     } else {
     //move is bad
     console.log('Move data is bad please try again');
+    return
     }
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
@@ -42,6 +43,7 @@ function getPlayerMove(move) {
 
 
 function getComputerMove(move) {
+
 
 
     // Write an expression that operates on a variable called `move`
