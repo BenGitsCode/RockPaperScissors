@@ -31,6 +31,7 @@ else
  move = move;
 }
    return move;
+}}
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
@@ -41,7 +42,7 @@ else
 function getComputerMove(move) {
     if(move === null)
   {
-   move = Randomplay();
+   move = RandomPlay();
   }
   else
   {
@@ -104,7 +105,12 @@ function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
+
+
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
     return [playerWins, computerWins];
 }
+
+
+//git test//
