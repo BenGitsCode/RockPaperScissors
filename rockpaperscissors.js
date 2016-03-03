@@ -38,7 +38,7 @@ else
 function getComputerMove(move) {
     if(move === null)
   {
-   move = RandomPlay();
+   move = randomPlay();
   }
   else
   {
