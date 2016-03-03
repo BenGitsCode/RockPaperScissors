@@ -114,10 +114,10 @@ function getWinner(playerMove,computerMove) {
       }
       }
     if (playerWins === 5) {
-        console.log('Player won 5 times!')
+        console.log('Player won 5 times!');
     }
     else if (computerWins === 5) {
-        console.log('Computer won 5 times!')
+        console.log('Computer won 5 times!');
     }
     else
     {
