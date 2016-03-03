@@ -83,7 +83,7 @@ function getWinner(playerMove,computerMove) {
       {
         winner = 'player';
       }
-      else if (playerMove = 'PAPER')
+      else if (playerMove === 'PAPER')
       {
         winner = 'computer';
       }
