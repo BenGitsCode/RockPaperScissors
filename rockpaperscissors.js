@@ -51,6 +51,8 @@ function getComputerMove(move) {
 
 function getWinner(playerMove,computerMove) {
     var winner;
+    computerMove = computerMove.toUpperCase();
+    playerMove = playerMove.toUpperCase();
     if (computerMove === playerMove)
     {
       winner = 'Tie';
@@ -101,25 +103,63 @@ function getWinner(playerMove,computerMove) {
       console.log("Let's play Rock, Paper, Scissors");
       var playerWins = 0;
       var computerWins = 0;
-    while (playerWins < 5 && computerWins < 5) {
-        var playerMove = getPlayerMove();
-        while (playerMove.toUpperCase() !== 'ROCK' || playerMove.toUpperCase() !== 'PAPER' || playerMove.toUpperCase() !== 'SCISSORS')
+    while (playerWins < 5 || computerWins < 5) {
+      if (playerWins === 5)
+      {
+        console.log('Player wins!' + ' The final score is ' + playerWins + ' to ' + computerWins);
+
+      }
+      else if (computerWins === 5)
+      {
+        console.log('Computer wins!' + ' The final score is ' + playerWins + ' to ' + computerWins);
+      }
+      else
         {
-          console.log('Stop being a dick, put in rock, paper or scissors you monster')
+
+
+
+        var computerMove = getComputerMove();
+        var playerMove = getPlayerMove();
+        console.log(playerMove + ' ' + computerMove);
+        var valid = false;
+        if (playerMove.toUpperCase() === 'ROCK' || playerMove.toUpperCase() === 'PAPER' || playerMove.toUpperCase() === 'SCISSORS')
+        {
+          valid = true;
+        }
+        else
+        {
+          valid = false;
+        }
+        while (valid === false)
+        {
+          if (playerMove.toUpperCase() === 'ROCK' || playerMove.toUpperCase() === 'PAPER' || playerMove.toUpperCase() === 'SCISSORS')
+          {
+            valid = true;
+          }
+          else
+          {
+            valid = false;
+          }
+          console.log(playerMove.toUpperCase() + ' Stop being a dick, put in rock, paper or scissors you monster')
           playerMove = getPlayerMove();
         }
-        var computerMove = getComputerMove();
+
+
+
         var winner = getWinner(playerMove, computerMove);
-            if (winner === 'player') {
+            if (winner === 'player')
+            {
+              playerWins += 1
               console.log('Player chose ' + playerMove + ' while computer chose ' + computerMove + '.' + 'Player wins! The score is ' + 'Player ' + playerWins + ' to ' + 'Computer: ' + computerWins);
-                return playerWins += 1;
+
 
 
             }
             else if (winner === 'computer')
             {
+              computerWins += 1;
               console.log('Player chose ' + playerMove + ' while computer chose ' + computerMove + '.' + 'Computer wins! The score is ' + 'Player ' + playerWins + ' to ' + 'Computer: ' + computerWins);
-                return computerWins += 1;
+
 
 
             }
@@ -128,17 +168,8 @@ function getWinner(playerMove,computerMove) {
               console.log('It is a Tie! The score is still Player: ' + playerWins + ' to ' +' Computer: ' + computerWins);
 
             }
-      if (playerWins === 5)
-      {
-        console.log('Player wins!' + ' The final score is ' + playerWins + ' to ' + computerWins);
 
-      }
-      else if (computerWins === 5)
-      {
-        console.log('Compter wins!' + ' The final score is ' + playerWins + ' to ' + computerWins);
-      }
-
-    }
+    }}
 }
 
 playToFive();
