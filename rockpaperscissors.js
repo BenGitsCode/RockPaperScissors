@@ -4,7 +4,7 @@
 'use strict';
 
 function getInput() {
-    console.log("Please choose either 'rock', 'paper', or 'scissors'.")
+    console.log("Please choose either 'rock', 'paper', or 'scissors'.");
     return prompt();
 }
 function randomPlay() {
@@ -22,7 +22,7 @@ function randomPlay() {
 ////////////////////////////////////////////////
 
 function getPlayerMove(move) {
-  if(move === null)
+  if (move === null)
 {
  move = getInput();
 }
@@ -36,7 +36,7 @@ else
 
 
 function getComputerMove(move) {
-    if(move === null)
+    if (move === null)
   {
    move = randomPlay();
   }
@@ -101,6 +101,8 @@ function getWinner(playerMove,computerMove) {
       console.log("Let's play Rock, Paper, Scissors");
       var playerWins = 0;
       var computerWins = 0;
+      while (playerWins && computerWins < 5) {
+
       if (winner === 'player') {
         console.log('Player chose' + playerMove + ' while computer chose' + computerMove);
         console.log('The score is currently ' + playerWins +  ' to');
@@ -112,7 +114,6 @@ function getWinner(playerMove,computerMove) {
         console.log('The score is currently ' + playerWins + ' to' + computerWins);
         return playerWins + 1;
       }
-      }
     if (playerWins === 5) {
         console.log('Player won 5 times!');
     }
@@ -122,8 +123,7 @@ function getWinner(playerMove,computerMove) {
     else
     {
 
+
     return [playerWins, computerWins];
-
-
-
   }
+}
