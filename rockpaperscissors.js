@@ -107,14 +107,14 @@ function getWinner(playerMove,computerMove) {
         var computerMove = getComputerMove();
         var winner = getWinner(playerMove, computerMove);
             if (winner === 'player') {
-              console.log("round: " + round + 'Player chose ' + playerMove + ' while computer chose ' + computerMove + '.' + 'Player wins! The score is ' + 'Player ' + playerwins ' to ' + 'Computer: ' + computerWins);
+              console.log("round: " + round + 'Player chose ' + playerMove + ' while computer chose ' + computerMove + '.' + 'Player wins! The score is ' + 'Player ' + playerwins + ' to ' + 'Computer: ' + computerWins);
                 return playerWins =+ 1;
                 return round += 1;
 
             }
             else if (winner === 'computer')
             {
-              console.log("round: " + round + 'Player chose ' + playerMove + ' while computer chose ' + computerMove + '.' + 'Computer wins! The score is ' 'Player ' + playerwins ' to ' + 'Computer: ' + computerWins);
+              console.log("round: " + round + 'Player chose ' + playerMove + ' while computer chose ' + computerMove + '.' + 'Computer wins! The score is ' + 'Player ' + playerwins + ' to ' + 'Computer: ' + computerWins);
                 return playerWins =+ 1;
                 return round += 1;
 
@@ -126,7 +126,7 @@ function getWinner(playerMove,computerMove) {
             }
       if (playerWins === 5)
       {
-        console.log('Round: ' + round + 'Player wins!' + ' The final score is ' + playerWins ' to ' + computerWins);
+        console.log('Round: ' + round + 'Player wins!' + ' The final score is ' + playerWins + ' to ' + computerWins);
 
       }
       else if (computerWins === 5)
@@ -135,3 +135,4 @@ function getWinner(playerMove,computerMove) {
       }
 
     }
+}
