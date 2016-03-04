@@ -101,29 +101,37 @@ function getWinner(playerMove,computerMove) {
       console.log("Let's play Rock, Paper, Scissors");
       var playerWins = 0;
       var computerWins = 0;
-      while (playerWins && computerWins < 5) {
+      var round = 0;
+    while (playerWins < 5 && computerWins < 5) {
+        var playerMove = getPlayerMove();
+        var computerMove = getComputerMove();
+        var winner = getWinner(playerMove, computerMove);
+            if (winner === 'player') {
+              console.log("round: " + round + 'Player chose ' + playerMove + ' while computer chose ' + computerMove + '.' + 'Player wins! The score is ' + 'Player ' + playerwins ' to ' + 'Computer: ' + computerWins);
+                return playerWins =+ 1;
+                return round += 1;
 
-      if (winner === 'player') {
-        console.log('Player chose' + playerMove + ' while computer chose' + computerMove);
-        console.log('The score is currently ' + playerWins +  ' to');
-        return playerWins + 1;
-      }
-      else (winner === 'computer');
+            }
+            else if (winner === 'computer')
+            {
+              console.log("round: " + round + 'Player chose ' + playerMove + ' while computer chose ' + computerMove + '.' + 'Computer wins! The score is ' 'Player ' + playerwins ' to ' + 'Computer: ' + computerWins);
+                return playerWins =+ 1;
+                return round += 1;
+
+            }
+            else
+            {
+              console.log("round: " + round + 'It is a Tie! The score is still Player: ' + playerWins + ' to ' +' Computer: ' + computerWins);
+              return round +=1;
+            }
+      if (playerWins === 5)
       {
-        console.log('Computer chose ' + computerMove + 'while player chose ' + playerMove);
-        console.log('The score is currently ' + playerWins + ' to' + computerWins);
-        return playerWins + 1;
+        console.log('Round: ' + round + 'Player wins!' + ' The final score is ' + playerWins ' to ' + computerWins);
+
       }
-    if (playerWins === 5) {
-        console.log('Player won 5 times!');
-    }
-    else if (computerWins === 5) {
-        console.log('Computer won 5 times!');
-    }
-    else
-    {
+      else if (computerWins === 5)
+      {
+        console.log('Round: ' + round + 'Compter wins!' + ' The final score is ' + playerWins + ' to ' + computerWins);
+      }
 
-
-    return [playerWins, computerWins];
-  }
-}
+    }
