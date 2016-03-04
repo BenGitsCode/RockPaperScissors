@@ -22,7 +22,7 @@ function randomPlay() {
 ////////////////////////////////////////////////
 
 function getPlayerMove(move) {
-  if (move === null)
+  if (move === null || move === undefined)
 {
  move = getInput();
 }
@@ -36,7 +36,7 @@ else
 
 
 function getComputerMove(move) {
-    if (move === null)
+    if (move === null || move === undefined)
   {
    move = randomPlay();
   }
@@ -103,18 +103,23 @@ function getWinner(playerMove,computerMove) {
       var computerWins = 0;
     while (playerWins < 5 && computerWins < 5) {
         var playerMove = getPlayerMove();
+        while (playerMove.toUpperCase() !== 'ROCK' || playerMove.toUpperCase() !== 'PAPER' || playerMove.toUpperCase() !== 'SCISSORS')
+        {
+          console.log('Stop being a dick, put in rock, paper or scissors you monster')
+          playerMove = getPlayerMove();
+        }
         var computerMove = getComputerMove();
         var winner = getWinner(playerMove, computerMove);
             if (winner === 'player') {
-              console.log('Player chose ' + playerMove + ' while computer chose ' + computerMove + '.' + 'Player wins! The score is ' + 'Player ' + playerwins + ' to ' + 'Computer: ' + computerWins);
+              console.log('Player chose ' + playerMove + ' while computer chose ' + computerMove + '.' + 'Player wins! The score is ' + 'Player ' + playerWins + ' to ' + 'Computer: ' + computerWins);
                 return playerWins += 1;
 
 
             }
             else if (winner === 'computer')
             {
-              console.log('Player chose ' + playerMove + ' while computer chose ' + computerMove + '.' + 'Computer wins! The score is ' + 'Player ' + playerwins + ' to ' + 'Computer: ' + computerWins);
-                return playerWins += 1;
+              console.log('Player chose ' + playerMove + ' while computer chose ' + computerMove + '.' + 'Computer wins! The score is ' + 'Player ' + playerWins + ' to ' + 'Computer: ' + computerWins);
+                return computerWins += 1;
 
 
             }
@@ -135,3 +140,5 @@ function getWinner(playerMove,computerMove) {
 
     }
 }
+
+playToFive();
