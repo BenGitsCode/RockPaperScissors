@@ -120,7 +120,7 @@ function getWinner(playerMove,computerMove) {
 
         var computerMove = getComputerMove();
         var playerMove = getPlayerMove();
-        console.log(playerMove + ' ' + computerMove);
+
         var valid = false;
         if (playerMove.toUpperCase() === 'ROCK' || playerMove.toUpperCase() === 'PAPER' || playerMove.toUpperCase() === 'SCISSORS')
         {
@@ -140,7 +140,7 @@ function getWinner(playerMove,computerMove) {
           {
             valid = false;
           }
-          console.log(playerMove.toUpperCase() + ' Stop being a dick, put in rock, paper or scissors you monster')
+          console.log(playerMove.toUpperCase() + ' Stop being a jerk, put in rock, paper or scissors you monster');
           playerMove = getPlayerMove();
         }
 
@@ -149,7 +149,7 @@ function getWinner(playerMove,computerMove) {
         var winner = getWinner(playerMove, computerMove);
             if (winner === 'player')
             {
-              playerWins += 1
+              playerWins += 1;
               console.log('Player chose ' + playerMove + ' while computer chose ' + computerMove + '.' + 'Player wins! The score is ' + 'Player ' + playerWins + ' to ' + 'Computer: ' + computerWins);
 
 
